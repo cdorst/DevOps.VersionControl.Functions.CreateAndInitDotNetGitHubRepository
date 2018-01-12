@@ -9,7 +9,7 @@ namespace DevOps.VersionControl.Functions.CreateAndInitDotNetGitHubRepository
 {
     public static class RepositoryCreator
     {
-        public static async Task CreateRepository(string directory, string name, string description, BasicAuthenticationCredentials? credentials = null, UserInfo? user = null)
+        public static async Task CreateRepository(string directory, string name, string description, BasicAuthenticationCredentials credentials = null, UserInfo? user = null)
         {
             await Create(name, description, credentials);
             InitializeRepository(directory, RemoteUri(name, credentials), user);
